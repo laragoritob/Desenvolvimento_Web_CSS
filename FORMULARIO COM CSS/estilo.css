@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+body {
+    background-color: #fde9ff;
+    font-family: "Verdana";
+    font-size: 10pt;
+}
+
+table {
+    text-align: center;
+    background-color: #87ceeb;
+    border-radius: 25px;
+}
+
+td, th, tr {
+    text-align: center;
+}
+
+.titulo_form {
+    font-size: 25pt;
+    text-align: left;
+}
+
+img {
+    height: 170px;
+    width: 170px;
+}
+
+address {
+    background-color: #87ceeb;
+    text-align: center;
+    font-size: 10pt;
+    height: 20px;
+    border-radius: 30px;
+    padding: 5px;   
+}
+
+input {
+    border-radius: 25px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 10pt;
+    height: 25px;
+    width: 195px;
+}
+
+select {
+    border-radius: 25px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 10pt;
+    width: 195px;
+    height: 30px;
+    text-align: center;
+}
+
+.data {
+    border-radius: 25px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 10pt;
+    width: 195px;
+    height: 30px;
+    text-align: center;
+}
+
+.botao {
+    background-color: #d5a1ff;
+    border-radius: 30px;
+    height: 40px;
+    width: 120px;
+    font-weight: bold;
+    font-size: 11pt;
+    border-width: 1px;
+    border-style: solid;
+}
