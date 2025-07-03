@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Formulário Funcionário </title>
     <link rel="stylesheet" type="text/css" href="estilo.css"/>
+    <script src="form_sa.js"></script>
 </head>
 <body>
-    <form method="post" action="#formulario">
+    <form method="post" action="#formulario" id="meuForm">
     <table align="center">
         <tr>
             <td rowspan="2"><img src="logo_ong.png" alt="logo"/></td>
@@ -30,9 +31,9 @@
         </tr>
 
         <tr>
-            <td> <input type="number" name="cod_func" required /> </td>
-            <td> <input type="text" name="nome" required /> </td>
-            <td> <input type="text" name="cpf" required /> </td>
+            <td> <input type="number" name="cod_func" id="cod_func" /> </td>
+            <td> <input type="text" name="nome" id="nome" /> </td>
+            <td> <input type="text" name="cpf" id="cpf" /> </td>
         </tr>
 
         <tr>
@@ -43,14 +44,14 @@
 
         <tr>
             <td> 
-                <select name="sexo" required>
+                <select name="sexo" id="sexo">
                     <option value="" disabled selected>Selecione</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Masculino">Masculino</option>
                 </select> 
             </td>
             <td> 
-                <select name="sexo" required>
+                <select name="escolaridade" id="escolaridade">
                     <option value="" disabled selected>Selecione</option>
                     <option value="EduInfantil">Educação Infantil</option>
                     <option value="EF1">Ensino Fundamental I</option>
@@ -62,7 +63,7 @@
                     <option value="DO">Doutorado</option>
                 </select> 
             </td>
-            <td> <input type="text" name="telefone" required/> </td>
+            <td> <input type="text" name="telefone" id="telefone"/> </td>
         </tr>
 
         <tr>
@@ -72,10 +73,10 @@
         </tr>
 
         <tr>
-            <td> <input type="text" name="rg"/> </td>
+            <td> <input type="text" name="rg" id="rg"/> </td>
             <td> <input type="date" class="data" name="data_nascimento" required min="1925-01-01" max=""> </td>
             <td> 
-                <select name="sexo" required>
+                <select name="est_civil" id="est_civil">
                     <option value="" disabled selected>Selecione</option>
                     <option value="Solteiro">Solteiro</option>
                     <option value="Casado">Casado</option>
@@ -98,9 +99,9 @@
         </tr>
 
         <tr>
-            <td> <input type="text" name="cep" required /> </td>
-            <td> <input type="text" name="uf" required /> </td>
-            <td> <input type="text" name="cidade" required /> </td>
+            <td> <input type="text" name="cep" id="cep" /> </td>
+            <td> <input type="text" name="uf" id="uf" /> </td>
+            <td> <input type="text" name="cidade" id="cidade" /> </td>
         </tr>
 
         <tr>
@@ -110,9 +111,9 @@
         </tr>
 
         <tr>
-            <td> <input type="text" name="bairro" required /> </td>
-            <td> <input type="text" name="rua" required /> </td>
-            <td> <input type="number" name="num_residencia" required /> </td>
+            <td> <input type="text" name="bairro" id="bairro" /> </td>
+            <td> <input type="text" name="rua" id="rua "/> </td>
+            <td> <input type="number" name="num_residencia" id="num_residencia" /> </td>
         </tr>
 
 
@@ -128,9 +129,9 @@
         </tr>
 
         <tr>
-            <td> <input type="text" name="usuario" required /> </td>
-            <td> <input type="text" name="senha" required /> </td>
-            <td> <input type="text" name="cargo" required /> </td>
+            <td> <input type="text" name="usuario" id="funcionario" /> </td>
+            <td> <input type="text" name="senha" id="senha" /> </td>
+            <td> <input type="text" name="cargo" id="cargo" /> </td>
         </tr>
 
         <tr>
@@ -141,8 +142,8 @@
 
         <tr>
             <td> <input type="date" class="data" name="data_efetivacao" required /> </td>
-            <td> <input type="email" name="email" required /> </td>
-            <td> <input type="text" name="nome" required /> </td>
+            <td> <input type="email" name="email" id="email" /> </td>
+            <td> <input type="text" name="foto" id="foto" /> </td>
         </tr>
 
 
