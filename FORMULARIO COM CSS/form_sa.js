@@ -1,75 +1,88 @@
-var formEl = document.getElementById('meuForm');
+var formEl = document.querySelector('form');
 
-// CHAMA A FUNÇÃO CAPTURA_EVENTOS //
+// Chama a função captura_eventos
 captura_eventos(formEl, 'submit', formValid);
 
-// FUNÇÃO PARA CAPTURAR EVENTOS //
+// Função para capturar eventos
 function captura_eventos(objeto, evento, funcao) {
-    // Teste addEventListener //
     if (objeto.addEventListener) {
         objeto.addEventListener(evento, funcao, true);
-    } 
-    // Teste attachEevent //
-    else if (objeto.attachEvent) {
-        var evento = 'on' + evento;
-        objeto.attachEvent(evento, funcao);
-    } 
+    } else if (objeto.attachEvent) {
+        var evt = 'on' + evento;
+        objeto.attachEvent(evt, funcao);
+    }
 }
 
-// FUNÇÃO PARA CANCELAR EVENTOS //
-function cancela_eventos(evento) {
-    if (event.preventDefault) {
-        event.preventDefault();
+// Função para cancelar eventos
+function cancela_evento(evento) {
+    if (evento.preventDefault) {
+        evento.preventDefault();
     } else {
         window.event.returnValue = false;
     }
     return false;
 }
 
+// Função principal de validação
 function formValid(evento) {
-    // Variável que verifica os campos //
-    var campoCod = formEl.cod_func.value;
-    var campoNome = formEl.nome.value;
-    var campoCPF = formEl.cpf.value;
-    var campoSexo = formEl.sexo;
-    var campoEscolaridade = formEl.escolaridade;
-    var campoTelefone = formEl.telefone.value;
-    var campoRG = formEl.rg.value;
-    var campoEst_Civil = formEl.est_civil;
-    var campoCEP = formEl.cep.value;
-    var campoUF = formEl.uf.value;
-    var campoCidade = formEl.cidade.value;
-    var campoBairro = formEl.bairro.value;
-    var campoRua = formEl.rua.value;
-    var campoNum_Residencia = formEl.num_residencia.value;
-    var campoFuncionario = formEl.funcionario.value;
-    var campoSenha = formEl.senha.value;
-    var campoCargo = formEl.cargo.value;
-    var campoEmail = formEl.email.value;
-    var campoFoto = formEl.foto.value;
+    // Pega os campos do formulário
+    var nome = document.getElementById('nome').value.trim();
+    var cnpj = document.getElementById('cnpj').value.trim();
+    var fundacao = document.getElementById('fundacao').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var telefone = document.getElementById('telefone').value.trim();
+    var cep = document.getElementById('cep').value.trim();
+    var uf = document.getElementById('uf').value.trim();
+    var cidade = document.getElementById('cidade').value.trim();
 
-    // VERIFICA CAMPO DE TEXTO //
-    if (campoNome.length == '') {
-        alert('O campo nome é obrigatório.');
-        return false;
+    // Valida Nome
+    if (nome === '') {
+        alert('O campo Nome da empresa é obrigatório!');
+        return cancela_evento(evento);
     }
 
-    // LAÇO QUE PERCORRE TODAS AS OPÇÕES //
-    for (var i = 0; i < campoCidade.length; i++) {
-        // VERIFICA SE A OPÇÃO ESTÁ SELECIONADA //
-        if (campoCidade[i].selected) {
-            if (campoCidade[i].value == '') {
-                alert('Selecione uma cidade.');
-                cancela_eventos(evento);
-            }
-        }
+    // Valida CNPJ/CPF
+    if (cnpj === '') {
+        alert('O campo CNPJ/CPF é obrigatório!');
+        return cancela_evento(evento);
     }
 
-    // CHAMA A FUNÇÃO VERIFICA CAMPOS PARA O RADIO //
-    verificaCampos(campoRadios);
+    // Valida Data de Fundação
+    if (fundacao === '') {
+        alert('O campo Data de Fundação é obrigatório!');
+        return cancela_evento(evento);
+    }
 
-    // CHAMA A FUNÇÃO VERIFICA CAMPOS PARA O CHECKBOX //
-    verificaCampos(campoCheckboxes);
-    alert("O formulário será enviado.")
+    // Valida Email
+    if (email === '') {
+        alert('O campo Email é obrigatório!');
+        return cancela_evento(evento);
+    }
+
+    // Valida Telefone
+    if (telefone === '') {
+        alert('O campo Telefone é obrigatório!');
+        return cancela_evento(evento);
+    }
+
+    // Valida CEP
+    if (cep === '') {
+        alert('O campo CEP é obrigatório!');
+        return cancela_evento(evento);
+    }
+
+    // Valida UF
+    if (uf === '') {
+        alert('O campo UF é obrigatório!');
+        return cancela_evento(evento);
+    }
+
+    // Valida Cidade
+    if (cidade === '') {
+        alert('O campo Cidade é obrigatório!');
+        return cancela_evento(evento);
+    }
+
+    alert("O formulário será enviado!");
     return true;
 }
